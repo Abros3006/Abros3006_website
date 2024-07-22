@@ -50,7 +50,7 @@
         <i class="header-toggle d-xl-none bi bi-list"></i>
     
         <div class="profile-img">
-          <img src="{% static 'img/my-profile-img.jpg' %}" alt="" class="img-fluid rounded-circle">
+          <img src="{% static 'img/profile.jpeg' %}" alt="" class="img-fluid rounded-circle">
         </div>
     
         <a href="{% url 'home' %}" class="logo d-flex align-items-center justify-content-center">
@@ -81,8 +81,8 @@
                 </a>
               </li>
               <li>
-                <a href="{% url 'resume' %}" class="{% if request.path == '/blog/' %}active{% endif %}">
-                  <i class="bi bi-envelope navicon"></i>Resume
+                <a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}">
+                  <i class="bi bi-file-person navicon"></i>Resume
                 </a>
               </li>
             </ul>
