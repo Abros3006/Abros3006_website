@@ -42,15 +42,31 @@
     <div class="social-links text-center">
       <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
       <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="#" class="linkedin"><i class="bi bi-github"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="index.html" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="resume.html"><i class="bi bi-person navicon"></i>Resume</a></li>
-        <li><a href="blog.html"><i class="bi bi-file-earmark-text navicon"></i>Blog</a></li>
-        <li><a href="highlights_of_My_Journey.html"><i class="bi bi-hdd-stack navicon"></i>Highlights of My Journey</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i>Contact</a></li>
+        <li>
+          <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">
+            <i class="bi bi-house navicon"></i>Home
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'blog' %}" class="{% if request.path == '/blog/' %}active{% endif %}">
+            <i class="bi bi-file-earmark-text navicon"></i>Blog
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <i class="bi bi-envelope navicon"></i>Contact
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'resume' %}" class="{% if request.path == '/blog/' %}active{% endif %}">
+            <i class="bi bi-envelope navicon"></i>Resume
+          </a>
+        </li>
       </ul>
     </nav>
 
@@ -126,7 +142,7 @@
               <ul>
                 <li>Pune, India</li>
                 <li>Email: atharvabangle@gmail.com</li>
-                <li>GitHub: <a href="#">GitHub Profile</a></li>
+                <li>GitHub: <a href="https://github.com/Abros3006">GitHub Profile</a></li>
               </ul>
             </div><!-- End Resume Item -->
 
@@ -170,34 +186,13 @@
             <div class="resume-item">
               <h4>E-commerce Website</h4>
               <h5>December-2023</h5>
-              <p><em>MIT-WPU</em></p>
-              <ul>
-                <li>Developed a full-stack e-commerce website as part of a team, contributing to both frontend and backend development using Django framework.</li>
-                <li>Implemented features such as user authentication, product catalog, shopping cart, and order management system.</li>
-                <li>Utilized HTML, CSS, and JavaScript for frontend design and MySQL for database management.</li>
-              </ul>
+              <p><em>Created a E-commerce website with authentication, cloud functions, security rules, and transactions. Conducted thorough testing to ensure project reliability and addressed potential security vulnerabilities</em></p>
             </div><!-- End Resume Item -->
 
             <div class="resume-item">
               <h4>Inventory Management System</h4>
               <h5>May-2023</h5>
-              <p><em>MIT-WPU</em></p>
-              <ul>
-                <li>Designed and developed an inventory management system to streamline product tracking and stock management processes.</li>
-                <li>Created an intuitive user interface using Bootstrap and integrated AJAX for seamless, real-time updates without page reloads.</li>
-                <li>Ensured data security and integrity through robust backend development in Django and comprehensive database management using PostgreSQL.</li>
-              </ul>
-            </div><!-- End Resume Item -->
-
-            <div class="resume-item">
-              <h4>Real-Time Chat Application</h4>
-              <h5>March-2023</h5>
-              <p><em>MIT-WPU</em></p>
-              <ul>
-                <li>Developed a real-time chat application for instant messaging and communication between users.</li>
-                <li>Implemented WebSocket technology for real-time bidirectional communication between clients and the server.</li>
-                <li>Used Django Channels to handle asynchronous communication and integrated Bootstrap for a responsive and user-friendly interface.</li>
-              </ul>
+              <p><em>Developed a full-stack Reddit-like platform with features such as user authentication, post creation, comment threading, upvotes, and subreddit creation. Leveraged Python for server-side rendering and React for a dynamic website.</em></p>
             </div><!-- End Resume Item -->
 
           </div>
@@ -208,6 +203,10 @@
   </main><!-- End #main -->
 
   <!-- Vendor JS Files -->
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>

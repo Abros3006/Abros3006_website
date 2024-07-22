@@ -34,6 +34,9 @@ urlpatterns = [
     
     # Blog app
     path('blog/', blog_views.blog, name='blog'),
+
+    # resume app
+    path('resume/', home_views.resume, name='resume'),
 ]
 
 
