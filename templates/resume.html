@@ -11,18 +11,17 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="../static/css/main.css" rel="stylesheet">
-
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -31,12 +30,12 @@
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <div class="profile-img">
-      <img src="{% static 'assets/img/my-profile-img.jpg' %}" alt="" class="img-fluid rounded-circle">
+      <img src="{% static 'img/my-profile-img.jpg' %}" alt="" class="img-fluid rounded-circle">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
       <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <!-- <img src="{% static 'img/logo.png' %}" alt=""> -->
       <h1 class="sitename">Atharva Bangle</h1>
     </a>
 
@@ -59,156 +58,163 @@
 
 
   <main class="main">
-     <!-- Resume Section -->
- <section id="resume" class="resume section">
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
 
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Resume</h2>
-      <p>Innovative and deadline-driven Software Developer with hands-on experience in developing user-centered web applications from initial concept to final, polished deliverable. Strong analytical and problem-solving skills with a solid foundation in computer science.</p>
-    </div><!-- End Section Title -->
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>Innovative and deadline-driven Software Developer with hands-on experience in developing user-centered web applications from initial concept to final, polished deliverable. Strong analytical and problem-solving skills with a solid foundation in computer science.</p>
+      </div><!-- End Section Title -->
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills section">
+      <!-- Skills Section -->
+      <section id="skills" class="skills section">
 
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Skills</h2>
-    </div><!-- End Section Title -->
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Skills</h2>
+        </div><!-- End Section Title -->
 
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-      <div class="row skills-content skills-animation">
+          <div class="row skills-content skills-animation">
 
-        <div class="col-lg-6">
+            <div class="col-lg-6">
 
-          <div class="progress">
-            <span class="skill"><h6><strong>Languages: </strong>C++, Python, Java, JavaScript, PHP<h6>
-          </div><!-- End Skills Item -->
+              <div class="progress">
+                <span class="skill"><h6><strong>Languages: </strong>C++, Python, Java, JavaScript, PHP</h6></span>
+              </div><!-- End Skills Item -->
 
-          <div class="progress">
-            <span class="skill"><h6><strong>Tools and Libraries: </strong>AJAX, React.js</h6>
-          </div><!-- End Skills Item -->
+              <div class="progress">
+                <span class="skill"><h6><strong>Tools and Libraries: </strong>AJAX, React.js</h6></span>
+              </div><!-- End Skills Item -->
 
-          <div class="progress">
-            <span class="skill"><h6><strong>Frameworks: </strong>Django, Laravel</h6>
-          </div><!-- End Skills Item -->
+              <div class="progress">
+                <span class="skill"><h6><strong>Frameworks: </strong>Django, Laravel</h6></span>
+              </div><!-- End Skills Item -->
+
+            </div>
+
+            <div class="col-lg-6">
+
+              <div class="progress">
+                <span class="skill"><h6><strong>Web Development: </strong>HTML, CSS, Bootstrap, Tailwind</h6></span>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><h6><strong>Database Management: </strong>MongoDB, MySQL, PostgreSQL</h6></span>
+              </div><!-- End Skills Item -->
+
+            </div>
+
+          </div>
 
         </div>
 
-        <div class="col-lg-6">
+      </section><!-- /Skills Section -->
 
-          <div class="progress">
-            <span class="skill"><h6><strong>Web Development: </strong>HTML, CSS, Bootstrap, Tailwind</h6>
-          </div><!-- End Skills Item -->
+      <div class="container">
 
-          <div class="progress">
-            <span class="skill"><h6><strong>Database Management: </strong>MongoDB, MySQL, PostgreSQL</h6>
-          </div><!-- End Skills Item -->
+        <div class="row">
 
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
+
+            <div class="resume-item pb-0">
+              <h4>Atharva Bangle</h4>
+              <p><em>Innovative and deadline-driven Software Developer with hands-on experience in developing user-centered web applications. I have a Strong analytical and problem-solving skills with a solid foundation in computer science.</em></p>
+              <ul>
+                <li>Pune, India</li>
+                <li>Email: atharvabangle@gmail.com</li>
+                <li>GitHub: <a href="#">GitHub Profile</a></li>
+              </ul>
+            </div><!-- End Resume Item -->
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Master in Computer Application</h4>
+              <h5>2023 - present</h5>
+              <p><em>MIT - World Peace University, Kothrud, Pune</em></p>
+              <p>CGPA - 7.6</p>
+            </div><!-- End Resume Item -->
+
+            <div class="resume-item pb-0">
+              <h4>Bachelor of Physics</h4>
+              <h5>2020 - 2023</h5>
+              <p><em>Savitribai Phule Pune University, Ganeshkhind, Pune</em></p>
+              <p>CGPA - 8.45</p>
+            </div><!-- End Resume Item -->
+
+            <h3 class="resume-title">Extracurricular Activities</h3>
+            <div class="resume-item">
+              <p><em>Lead Student Placement Coordinator at MIT-WPU</em></p>
+              <p><em>Professional Chess Player</em></p>
+              <p><em>Winner of Coderhunt competition organized by MIT-WPU</em></p>
+            </div><!-- End Resume Item -->
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item pb-0">
+              <h4>Software Developer Intern</h4>
+              <h5>May, 2024 - Present</h5>
+              <p><em>Remote</em></p>
+              <ul>
+                <li>Collaborated with a highly productive team of developers in developing a website.</li>
+                <li>Thrived in a fast-paced startup, ensuring efficient product delivery despite tight deadlines.</li>
+                <li>Demonstrated expertise in PHP and JavaScript, with hands-on experience in MySQL and PostgreSQL databases and leveraged frontend frameworks such as Bootstrap and Tailwind CSS to enhance user interfaces.</li>
+              </ul>
+            </div><!-- End Resume Item -->
+
+            <h3 class="resume-title">Projects</h3>
+            <div class="resume-item">
+              <h4>E-commerce Website</h4>
+              <h5>December-2023</h5>
+              <p><em>MIT-WPU</em></p>
+              <ul>
+                <li>Developed a full-stack e-commerce website as part of a team, contributing to both frontend and backend development using Django framework.</li>
+                <li>Implemented features such as user authentication, product catalog, shopping cart, and order management system.</li>
+                <li>Utilized HTML, CSS, and JavaScript for frontend design and MySQL for database management.</li>
+              </ul>
+            </div><!-- End Resume Item -->
+
+            <div class="resume-item">
+              <h4>Inventory Management System</h4>
+              <h5>May-2023</h5>
+              <p><em>MIT-WPU</em></p>
+              <ul>
+                <li>Designed and developed an inventory management system to streamline product tracking and stock management processes.</li>
+                <li>Created an intuitive user interface using Bootstrap and integrated AJAX for seamless, real-time updates without page reloads.</li>
+                <li>Ensured data security and integrity through robust backend development in Django and comprehensive database management using PostgreSQL.</li>
+              </ul>
+            </div><!-- End Resume Item -->
+
+            <div class="resume-item">
+              <h4>Real-Time Chat Application</h4>
+              <h5>March-2023</h5>
+              <p><em>MIT-WPU</em></p>
+              <ul>
+                <li>Developed a real-time chat application for instant messaging and communication between users.</li>
+                <li>Implemented WebSocket technology for real-time bidirectional communication between clients and the server.</li>
+                <li>Used Django Channels to handle asynchronous communication and integrated Bootstrap for a responsive and user-friendly interface.</li>
+              </ul>
+            </div><!-- End Resume Item -->
+
+          </div>
         </div>
-
       </div>
+    </section><!-- End Resume Section -->
 
-    </div>
+  </main><!-- End #main -->
 
-  </section><!-- /Skills Section -->
-
-    <div class="container">
-
-      <div class="row">
-
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="resume-title">Sumary</h3>
-
-          <div class="resume-item pb-0">
-            <h4>Atharva Bangle</h4>
-            <p><em>Innovative and deadline-driven Software Developer with hands-on experience in developing user-centered web applications. I have a Strong analytical and problem-solving skills with a solid foundation in computer science.</em></p>
-            <ul>
-              <li>Pune, India</li>
-              <li>Email: atharvabangle@gmail.com</li>
-              <li>GitHub: GitHub Profile</li>
-            </ul>
-          </div><!-- Edn Resume Item -->
-
-          <h3 class="resume-title">Education</h3>
-          <div class="resume-item">
-            <h4>Master in Computer Application</h4>
-            <h5>2023 - present</h5>
-            <p><em>MIT - World Peace University, Kothrud, Pune</em></p>
-            <p>CGPA - 7.6</p>
-          </div><!-- Edn Resume Item -->
-
-          <div class="resume-item pb-0">
-            <h4>Bachelor of Physics</h4>
-            <h5>2020 - 2023</h5>
-            <p><em>Savitribai Phule Pune University, Ganeshkhind, Pune</em></p>
-            <p>CGPA - 8.45</p>
-          </div><!-- Edn Resume Item -->
-
-          <h3 class="resume-title">Extracurricular Activities</h3>
-          <div class="resume-item">
-            <p><em>Lead Student Placement Coordinator at MIT-WPU</em></p>
-            <p><em>Professional Chess Player</em></p>
-            <p><em>Winner of Coderhunt competition organized by MIT-WPU</em></p>
-          </div><!-- Edn Resume Item -->
-        </div>
-
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="resume-title">Professional Experience</h3>
-          <div class="resume-item pb-0">
-            <h4>Software Developer Intern</h4>
-            <h5>May, 2024 - Present</h5>
-            <p><em>Remote</em></p>
-            <ul>
-              <li>Collaborated with a highly productive team of developers in developing a website.</li>
-              <li>Thrived in a fast-paced startup, ensuring efficient product delivery despite tight deadlines.</li>
-              <li>Demonstrated expertise in PHP and JavaScript, with hands-on experience in MySQL and PostgreSQL databases and leveraged frontend frameworks such as Bootstrap and Tailwind CSS to enhance user interfaces.</li>
-            </ul>
-          </div><!-- Edn Resume Item -->
-
-          <h3 class="resume-title">Projects</h3>
-          <div class="resume-item">
-            <h4>E-commerce Website</h4>
-            <h5>December-2023</h5>
-            <p><em>Technologies: Django, Python, Tailwind, React</em></p>
-            <p>Created a E-commerce website with authentication, cloud functions, security rules, and transactions. Conducted thorough testing to ensure project reliability and addressed potential security vulnerabilities.</p>
-          </div><!-- Edn Resume Item -->
-
-          <div class="resume-item">
-            <h4>September-2023</h4>
-            <p><em>Technologies: React, Python, Chakra UI, Firebase</em></p>
-            <p>Developed a full-stack Reddit-like platform with features such as user authentication, post creation, comment threading, upvotes, and subreddit creation. Leveraged Python for server-side rendering and React for a dynamic website.</p>
-          </div><!-- Edn Resume Item -->
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section><!-- /Resume Section -->
-</main>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    AOS.init();
-  });
-</script>
-
-<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
-<script src="{% static 'vendor/typed.js/typed.umd.js' %}"></script>
-<script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
-<script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
-<script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
-<script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-<script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
 
 </body>
 </html>
