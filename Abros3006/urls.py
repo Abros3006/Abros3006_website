@@ -37,6 +37,9 @@ urlpatterns = [
 
     # resume app
     path('resume/', home_views.resume, name='resume'),
+
+    #snapshots
+    path('snapshots/', snapshots_views.snapshots, name='snapshots'),
 ]
 
 
