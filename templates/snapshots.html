@@ -77,7 +77,12 @@
                 </a>
               </li>
               <li>
-                <a href="#contact">
+                <a href="{% url 'snapshots' %}" class="{% if request.path == '/snapshots/' %}active{% endif %}">
+                  <i class="bi bi-camera navicon"></i></i>Snapshots
+                </a>
+            </li>
+              <li>
+                <a href="{% url 'home' %}#contact">
                   <i class="bi bi-envelope navicon"></i>Contact
                 </a>
               </li>
