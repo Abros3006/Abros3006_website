@@ -109,15 +109,15 @@
 
         <!-- Posts Section -->
         <section class="w-full flex flex-col items-center px-3">
-          {% for post in posts %}
+          {% for post in posts reversed %}
             <article class="flex flex-col shadow my-4 border-2" data-aos="fade-down" data-aos-delay="100">
                 <!-- Article Image -->
                 <div class="bg-white flex flex-col justify-start p-6">
                     <a href="#" class="text-3xl text-blue-400 pb-4">{{post.title}}</a>
                     <p href="#" class="text-sm pb-3">
-                        By <a href="#" class="font-semibold hover:text-gray-800">Atharva Bangle</a>, Published on {{post.date}}
+                        By <a href="#" class="font-semibold hover:text-gray-800">Atharva Bangle</a>, Published on {{post.Date}}
                     </p>
-                    <a href="#" class="pb-6">{{post.body}}</a>
+                    <a href="#" class="pb-6">{{post.body|truncatewords:40}}</a>
                     <a href="#" class="uppercase text-gray-800 hover:text-blue-700">Continue Reading <i class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
