@@ -109,43 +109,19 @@
 
         <!-- Posts Section -->
         <section class="w-full flex flex-col items-center px-3">
-
+          {% for post in posts %}
             <article class="flex flex-col shadow my-4 border-2" data-aos="fade-down" data-aos-delay="100">
                 <!-- Article Image -->
                 <div class="bg-white flex flex-col justify-start p-6">
-                    <a href="#" class="text-3xl text-blue-400 pb-4">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</a>
+                    <a href="#" class="text-3xl text-blue-400 pb-4">{{post.title}}</a>
                     <p href="#" class="text-sm pb-3">
-                        By <a href="#" class="font-semibold hover:text-gray-800">David Grzyb</a>, Published on April 25th, 2020
+                        By <a href="#" class="font-semibold hover:text-gray-800">Atharva Bangle</a>, Published on {{post.date}}
                     </p>
-                    <a href="#" class="pb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis porta dui. Ut eu iaculis massa. Sed ornare ligula lacus, quis iaculis dui porta volutpat. In sit amet posuere magna..</a>
+                    <a href="#" class="pb-6">{{post.body}}</a>
                     <a href="#" class="uppercase text-gray-800 hover:text-blue-700">Continue Reading <i class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
-
-            <article class="flex flex-col shadow my-4 border-2" data-aos="fade-down" data-aos-delay="100">
-                <!-- Article Image -->
-                <div class="bg-white flex flex-col justify-start p-6">
-                    <a href="#" class="text-3xl text-blue-400 pb-4">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</a>
-                    <p href="#" class="text-sm pb-3">
-                        By <a href="#" class="font-semibold hover:text-gray-800">David Grzyb</a>, Published on April 25th, 2020
-                    </p>
-                    <a href="#" class="pb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis porta dui. Ut eu iaculis massa. Sed ornare ligula lacus, quis iaculis dui porta volutpat. In sit amet posuere magna..</a>
-                    <a href="#" class="uppercase text-gray-800 hover:text-blue-700">Continue Reading <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <article class="flex flex-col shadow my-4 border-2" data-aos="fade-down" data-aos-delay="100">
-                <!-- Article Image -->
-                <div class="bg-white flex flex-col justify-start p-6">
-                    <a href="#" class="text-3xl text-blue-400 pb-4">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</a>
-                    <p href="#" class="text-sm pb-3">
-                        By <a href="#" class="font-semibold hover:text-gray-800">David Grzyb</a>, Published on April 25th, 2020
-                    </p>
-                    <a href="#" class="pb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis porta dui. Ut eu iaculis massa. Sed ornare ligula lacus, quis iaculis dui porta volutpat. In sit amet posuere magna..</a>
-                    <a href="#" class="uppercase text-gray-800 hover:text-blue-700">Continue Reading <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
+          {% endfor %}
             <!-- Pagination -->
             <div class="flex items-center py-8">
                 <a href="#" class="h-10 w-10 bg-blue-800 hover:bg-blue-600 font-semibold text-white text-sm flex items-center justify-center">1</a>
