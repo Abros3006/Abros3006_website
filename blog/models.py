@@ -5,5 +5,6 @@ from datetime import datetime
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=100)
     Date = models.DateTimeField(default=datetime.now, blank=True)
     body = models.CharField(max_length=100000)

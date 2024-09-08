@@ -40,6 +40,9 @@ urlpatterns = [
 
     #snapshots
     path('snapshots/', snapshots_views.snapshots, name='snapshots'),
+
+    #Post
+    path('blog/<str:post_id>/', blog_views.post, name='post'),
 ]
 
 

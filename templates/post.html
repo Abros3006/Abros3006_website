@@ -51,7 +51,7 @@
         <nav id="navmenu" class="navmenu">
             <ul>
                 <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}"><i class="bi bi-house navicon"></i>Home</a></li>
-                <li><a href="{% url 'blog' %}" class="{% if request.path == '/blog/' %}active{% endif %}"><i class="bi bi-file-earmark-text navicon"></i>Blog</a></li>
+                <li><a href="{% url 'blog' %}" class="active"><i class="bi bi-file-earmark-text navicon"></i>Blog</a></li>
                 <li><a href="{% url 'snapshots' %}" class="{% if request.path == '/snapshots/' %}active{% endif %}"><i class="bi bi-camera navicon"></i>Snapshots</a></li>
                 <li><a href="{% url 'home' %}#contact"><i class="bi bi-envelope navicon"></i>Contact</a></li>
                 <li><a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}"><i class="bi bi-file-person navicon"></i>Resume</a></li>
@@ -59,43 +59,32 @@
         </nav>
     </header>
 
-<main class="main">
-    <div class="container mt-5">
-      <div class="row">
-          <div class="mx-auto">
-              <h1 class="text-center mb-2">Welcome to My Blog</h1>
-              <p class="text-center text-muted mb-5">Exploring tech, travel, and everything in between</p>
-              {% for post in posts reversed %}
-              <article class="post-preview mb-5">
-                  <a href="/blog/{{post.id}}">
-                      <h2 class="post-title">{{post.title}}</h2>
-                      <h4 class="post-subtitle">{{post.subtitle}}</h4>
-                  </a>
-                  <p class="post-meta">Posted by <a href="#">Atharva Bangle</a> , Published on {{post.Date}}</p>
-                  <p class="post-excerpt">{{post.body|truncatewords:40}}</p>
-              </article>
-              
-              <hr>
-                {% endfor %}            
-              <nav class="blog-pagination" aria-label="Pagination">
-                  <a class="btn btn-primary float-end" href="#">Older Posts ⇒</a>
-              </nav>
-          </div>
-      </div>
-    </div>
-
-    <footer>
-        <div class="container">
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container mt-5">
             <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto">
-                    <p class="text-center text-muted copyright mb-2">Copyright © Atharva Bangle 2024</p>
+                <div class="mx-auto">
+                    <h1 class="mb-2">{{posts.title}}</h1>
+                    <p class="text-muted mb-5">Posted by <a href="#">Atharva Bangle</a> , Published on {{posts.Date}}</p>
+                    <p class="post-excerpt">{{posts.body}}</p>
+                    
+                    <hr>
+      
                 </div>
             </div>
-        </div>
-    </footer>
-</main>
+            <footer>
+              <div class="container mt-5">
+                  <div class="row">
+                      <div class="col-9 mx-auto">
+                          <p class="text-center text-muted mb-2">Copyright © Atharva Bangle 2024</p>
+                      </div>
+                  </div>
+              </div>
+          </footer>
+      </div>
+    </main>
 
-  <!-- Preloader -->
+      <!-- Preloader -->
   <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
