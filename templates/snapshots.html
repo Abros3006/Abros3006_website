@@ -1,16 +1,17 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <meta name="author" content="David Grzyb">
-    <meta name="description" content="">
+    <title>Atharva Bangle's Blog</title>
+    <meta name="author" content="Atharva Bangle">
+    <meta name="description" content="Personal blog of Atharva Bangle">
+    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@300;400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -21,29 +22,10 @@
 
     <!-- Main CSS File -->
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
-    <!-- Tailwind -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-
-    <!-- AlpineJS -->
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <!-- Font Awesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" defer></script>
 </head>
-<style>
-    body {
-      font-family: 'Roboto', 'Poppins', 'Raleway', sans-serif;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Poppins', 'Roboto', 'Raleway', sans-serif;
-    }
-    
-    .sitename, .navmenu {
-      font-family: 'Raleway', 'Poppins', 'Roboto', sans-serif;
-    }
-</style>
 
 <body class="bg-white font-family-karla">
 
@@ -51,7 +33,7 @@
         <i class="header-toggle d-xl-none bi bi-list"></i>
     
         <div class="profile-img">
-          <img src="{% static 'img/profile.jpeg' %}" alt="" class="img-fluid rounded-circle">
+          <img src="https://via.placeholder.com/150" alt="Profile Image" class="img-fluid rounded-circle">
         </div>
     
         <a href="{% url 'home' %}" class="logo d-flex align-items-center justify-content-center">
@@ -96,56 +78,42 @@
     
     </header>
 
-    <main class="main">
-    <!-- Text Header -->
-    <header class="w-full container mx-auto">
-        <div class="flex flex-col items-center py-6" data-aos="fade-down">
-            <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
-                Snapshots of my Life
-            </a>
-        </div>
-    </header>
-  
-      <!-- block news -->
-       <!-- block news -->
-<div class="bg-white py-6">
-  <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
-    <div class="flex flex-row flex-wrap">
-      <div class="flex-shrink max-w-full w-full overflow-hidden">
-        <div class="flex flex-row flex-wrap -mx-3">
-          {% for story in storys reversed %}
-          <div class="flex-shrink max-w-full w-full sm:w-1/2 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
-            <div class="flex flex-row sm:block hover-img">
-              <a href="">
-                <img class="max-w-full w-full mx-auto" src="{% static 'img/dummy/img19.jpg' %}" alt="alt title">
-              </a>
-              <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-                <h3 class="text-lg font-bold leading-tight mb-2">
-                  <a href="#">{{story.title}}</a>
-                </h3>
-                <p class="text-gray-600 leading-tight mb-1">{{story.Caption}}</p>
-                <a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>{{story.date}}</a>
+<main class="main">
+  <div class="container mt-5">
+    <div class="row">
+      <h1 class="text-center mb-2 heading">Welcome to Snapshots</h1>
+      <p class="text-center text-muted mb-5">A little glimpse into my life</p>
+      {% for story in stories %}
+        {% if story.image_url %}
+          <div class="col-12 col-md-6 mb-4">
+            <div class="card">
+              <img src="{% static story.image_url %}" alt="{{ story.title }}" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <h5 class="text-decoration-none heading">{{ story.title }}</a>
+                </h5>
+                <p class="card-text text-muted">{{ story.Caption }}</p>
+                <a href="#" class="text-muted">
+                  <span class="me-2 border-start border-danger"></span>{{ story.date }}
+                </a>
               </div>
             </div>
           </div>
-          {% endfor %}
-        </div>
-      </div>
+        {% endif %}
+      {% endfor %}
+      <nav class="blog-pagination" aria-label="Pagination">
+        <a class="btn" href="#">Older Posts ⇒</a>
+    </nav>
     </div>
   </div>
-</div>
 </main>
 
   <!-- Preloader -->
   <div id="preloader"></div>
 
+    <!-- Vendor JS Files -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
     <script src="{% static 'vendor/typed.js/typed.umd.js' %}"></script>
     <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
     <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
@@ -156,9 +124,9 @@
     
     <!-- Main JS File -->
     <script src="{% static 'js/main.js' %}"></script>
-  
-  <!-- Start development js -->
-  <script src="{% static 'js/theme.js' %}"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 </html>

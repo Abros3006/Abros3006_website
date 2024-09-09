@@ -35,7 +35,7 @@
         </button>
     
         <div class="profile-img">
-            <img src="{% static 'img/profile.jpeg' %}" alt="Atharva Bangle" class="img-fluid rounded-circle">
+            <img src="https://via.placeholder.com/150" alt="Profile Image" class="img-fluid rounded-circle">
         </div>
     
         <a href="{% url 'home' %}" class="logo d-flex align-items-center justify-content-center">
@@ -63,16 +63,16 @@
     <div class="container mt-5">
       <div class="row">
           <div class="mx-auto">
-              <h1 class="text-center mb-2">Welcome to My Blog</h1>
+              <h1 class="text-center mb-2 heading">Welcome to My Blog</h1>
               <p class="text-center text-muted mb-5">Exploring tech, travel, and everything in between</p>
               {% for post in posts reversed %}
               <article class="post-preview mb-5">
                   <a href="/blog/{{post.id}}">
-                      <h2 class="post-title">{{post.title}}</h2>
+                      <h2 class="post-title heading">{{post.title}}</h2>
                       <h4 class="post-subtitle">{{post.subtitle}}</h4>
                   </a>
-                  <p class="post-meta">Posted by <a href="#">Atharva Bangle</a> , Published on {{post.Date}}</p>
-                  <p class="post-excerpt">{{post.body|truncatewords:40}}</p>
+                  <p class="post-meta">Posted by <a class="heading">Atharva Bangle</a> , Published on {{post.Date}}</p>
+                  <a href="/blog/{{post.id}}"><h6 class="post-excerpt">{{post.body|truncatewords:40}}</h6></a>
               </article>
               
               <hr>
