@@ -57,6 +57,11 @@
           </a>
         </li>
         <li>
+          <a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}">
+            <i class="bi bi-file-person navicon"></i>Resume
+          </a>
+        </li>
+        <li>
           <a href="{% url 'blog' %}" class="{% if request.path == '/blog/' %}active{% endif %}">
             <i class="bi bi-file-earmark-text navicon"></i>Blog
           </a>
@@ -69,11 +74,6 @@
         <li>
           <a href="{% url 'home' %}#contact">
             <i class="bi bi-envelope navicon"></i>Contact
-          </a>
-        </li>
-        <li>
-          <a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}">
-            <i class="bi bi-file-person navicon"></i>Resume
           </a>
         </li>
       </ul>
@@ -420,7 +420,7 @@
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Abros3006</strong> <span>All Rights Reserved</span></p>
+        <p>Copyright © Atharva Bangle 2024</p>
       </div>
     </div>
 
