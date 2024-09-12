@@ -5,9 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atharva Bangle's Blog</title>
+    <title>Abros3006</title>
     <meta name="author" content="Atharva Bangle">
     <meta name="description" content="Personal blog of Atharva Bangle">
+
+      <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static '../static/img/Fav/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '../static/img/Fav/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static '../static/img/Fav/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static '../static/img/Fav/site.webmanifest' %}">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -51,10 +57,10 @@
         <nav id="navmenu" class="navmenu">
             <ul>
                 <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}"><i class="bi bi-house navicon"></i>Home</a></li>
+                <li><a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}"><i class="bi bi-file-person navicon"></i>Resume</a></li>
                 <li><a href="{% url 'blog' %}" class="active"><i class="bi bi-file-earmark-text navicon"></i>Blog</a></li>
                 <li><a href="{% url 'snapshots' %}" class="{% if request.path == '/snapshots/' %}active{% endif %}"><i class="bi bi-camera navicon"></i>Snapshots</a></li>
                 <li><a href="{% url 'home' %}#contact"><i class="bi bi-envelope navicon"></i>Contact</a></li>
-                <li><a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}"><i class="bi bi-file-person navicon"></i>Resume</a></li>
             </ul>
         </nav>
     </header>

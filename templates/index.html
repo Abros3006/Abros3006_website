@@ -9,6 +9,12 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static '../static/img/Fav/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '../static/img/Fav/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static '../static/img/Fav/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static '../static/img/Fav/site.webmanifest' %}">
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -57,6 +63,11 @@
           </a>
         </li>
         <li>
+          <a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}">
+            <i class="bi bi-file-person navicon"></i>Resume
+          </a>
+        </li>
+        <li>
           <a href="{% url 'blog' %}" class="{% if request.path == '/blog/' %}active{% endif %}">
             <i class="bi bi-file-earmark-text navicon"></i>Blog
           </a>
@@ -69,11 +80,6 @@
         <li>
           <a href="{% url 'home' %}#contact">
             <i class="bi bi-envelope navicon"></i>Contact
-          </a>
-        </li>
-        <li>
-          <a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}">
-            <i class="bi bi-file-person navicon"></i>Resume
           </a>
         </li>
       </ul>
@@ -159,14 +165,14 @@
               <div class="col-lg-4 col-md-6 blog-item isotope-item filter-branding">
                 <div class="blog-content h-100">
                   <div class="blog-info">
-                    <h4>Blog 1</h4>
-                    <h5>Subtitle</h5>
-                    <a href="{% url 'blog' %}" class="btn mt-3">Read More</a>
+                    <h4>Blog</h4>
+                    <h5>Coming Soon</h5>
+                    <a href="{% url 'blog' %}" class="btn mt-3">Stay Tuned</a>
                   </div>
                 </div>
               </div><!-- End blog Item -->
               
-              <div class="col-lg-4 col-md-6 blog-item isotope-item filter-books">
+              <!-- <div class="col-lg-4 col-md-6 blog-item isotope-item filter-books">
                 <div class="blog-content h-100">
                   <div class="blog-info">
                     <h4>Blog 2</h4>
@@ -174,7 +180,7 @@
                     <a href="{% url 'blog' %}" class="btn mt-3">Read More</a>
                   </div>
                 </div>
-              </div><!-- End blog Item -->
+              </div>
               
               <div class="col-lg-4 col-md-6 blog-item isotope-item filter-app">
                 <div class="blog-content h-100">
@@ -184,7 +190,7 @@
                     <a href="{% url 'blog' %}" class="btn mt-3">Read More</a>
                   </div>
                 </div>
-              </div><!-- End blog Item -->
+              </div> -->
               <!-- {% for post in posts %}
               <div class="col-lg-4 col-md-6 blog-item isotope-item filter-branding">
                 <div class="blog-content h-100">
@@ -314,13 +320,13 @@
         <div class="swiper-slide">
           <div class="snapshot-item">
             <p>
-              <a href="{% url 'snapshots' %}">Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</a>
+              <a href="{% url 'snapshots' %}">Coming Soon</a>
             </p>
             <img src="https://via.placeholder.com/150" class="snapshot-img" alt="">
           </div>
         </div><!-- End snapshot item -->
 
-        <div class="swiper-slide">
+        <!-- <div class="swiper-slide">
           <div class="snapshot-item">
             <p>
               <a href="{% url 'snapshots' %}">Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</a>
@@ -329,14 +335,14 @@
           </div>
         </div><!-- End snapshot item -->
 
-        <div class="swiper-slide">
+        <!-- <div class="swiper-slide">
           <div class="snapshot-item">
             <p>
               <a href="{% url 'snapshots' %}">Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</a>
             </p>
             <img src="https://via.placeholder.com/150" class="snapshot-img" alt="">
           </div>
-        </div><!-- End snapshot item -->
+        </div>
 
         <div class="swiper-slide">
           <div class="snapshot-item">
@@ -345,7 +351,7 @@
             </p>
             <img src="https://via.placeholder.com/150" class="snapshot-img" alt="">
           </div>
-        </div><!-- End snapshot item -->
+        </div>
 
         <div class="swiper-slide">
           <div class="snapshot-item">
@@ -354,7 +360,7 @@
             </p>
             <img src="https://via.placeholder.com/150" class="snapshot-img" alt="">
           </div>
-        </div><!-- End snapshot item -->
+        </div> -->
 
       </div>
       <div class="swiper-pagination"></div>
@@ -371,7 +377,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Send me a message and I will get back to you soon!!</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -420,7 +426,7 @@
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Abros3006</strong> <span>All Rights Reserved</span></p>
+        <p>Copyright © Atharva Bangle 2024</p>
       </div>
     </div>
 

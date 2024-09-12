@@ -4,9 +4,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atharva Bangle's Blog</title>
+    <title>Abros3006</title>
     <meta name="author" content="Atharva Bangle">
     <meta name="description" content="Personal blog of Atharva Bangle">
+
+      <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static '../static/img/Fav/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '../static/img/Fav/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static '../static/img/Fav/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static '../static/img/Fav/site.webmanifest' %}">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -54,6 +60,11 @@
                 </a>
               </li>
               <li>
+                <a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}">
+                  <i class="bi bi-file-person navicon"></i>Resume
+                </a>
+              </li>
+              <li>
                 <a href="{% url 'blog' %}" class="{% if request.path == '/blog/' %}active{% endif %}">
                   <i class="bi bi-file-earmark-text navicon"></i>Blog
                 </a>
@@ -68,11 +79,6 @@
                   <i class="bi bi-envelope navicon"></i>Contact
                 </a>
               </li>
-              <li>
-                <a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}">
-                  <i class="bi bi-file-person navicon"></i>Resume
-                </a>
-              </li>
             </ul>
           </nav>
     
@@ -83,7 +89,21 @@
     <div class="row">
       <h1 class="text-center mb-2 heading">Welcome to Snapshots</h1>
       <p class="text-center text-muted mb-5">A little glimpse into my life</p>
-      {% for story in stories %}
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card">
+          <!-- <img src="{% static story.image_url %}" alt="" class="card-img-top"> -->
+          <div class="card-body">
+            <h5 class="card-title">
+              <h5 class="text-decoration-none heading">Snapshots</a>
+            </h5>
+            <p class="card-text text-muted">Coming Soon</p>
+            <h6 href="#" class="text-muted">
+              <span class="me-2 border-start border-danger"></span>Stay Tuned
+            </h6>
+          </div>
+        </div>
+      </div>
+      <!-- {% for story in stories %}
         {% if story.image_url %}
           <div class="col-12 col-md-6 mb-4">
             <div class="card">
@@ -100,12 +120,22 @@
             </div>
           </div>
         {% endif %}
-      {% endfor %}
+      {% endfor %} -->
       <nav class="blog-pagination" aria-label="Pagination">
         <a class="btn" href="#">Older Posts ⇒</a>
     </nav>
     </div>
   </div>
+
+  <footer id="footer" class="footer position-relative">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>Copyright © Atharva Bangle 2024</p>
+      </div>
+    </div>
+
+  </footer>
 </main>
 
   <!-- Preloader -->
