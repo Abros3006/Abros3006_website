@@ -71,7 +71,16 @@
           <div class="mx-auto">
               <h1 class="text-center mb-2 heading">Welcome to My Blog</h1>
               <p class="text-center text-muted mb-5">Exploring tech, travel, and everything in between</p>
-              {% for post in posts reversed %}
+              <article class="post-preview mb-5">
+                  <a href="/blog/{{post.id}}">
+                      <h2 class="post-title heading">Blogs are Coming Soon</h2>
+                      <h4 class="post-subtitle">Stay Tuned for Updates</h4>
+                  </a>
+
+              </article>
+              
+              <hr>
+              <!-- {% for post in posts reversed %}
               <article class="post-preview mb-5">
                   <a href="/blog/{{post.id}}">
                       <h2 class="post-title heading">{{post.title}}</h2>
@@ -82,7 +91,7 @@
               </article>
               
               <hr>
-                {% endfor %}            
+                {% endfor %}             -->
               <nav class="blog-pagination" aria-label="Pagination">
                   <a class="btn btn-primary float-end" href="#">Older Posts ⇒</a>
               </nav>
