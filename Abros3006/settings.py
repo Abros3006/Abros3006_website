@@ -29,7 +29,7 @@ DEBUG = config('DEBUG', cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 
-SITE_ID = 1
+SITE_ID = 2
 # Application definition
 
 INSTALLED_APPS = [
@@ -168,6 +168,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'login/'
 # Redirect to home URL after logout
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'login/'
+
