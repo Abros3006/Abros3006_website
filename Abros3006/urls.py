@@ -22,6 +22,7 @@ from django.contrib.auth import views as auth_views
 from home import views as home_views
 from snapshots import views as snapshots_views
 from blog import views as blog_views
+from users import views as users_views
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -43,6 +44,13 @@ urlpatterns = [
 
     #Post
     path('blog/<str:post_id>/', blog_views.post, name='post'),
+
+    # User authentication
+    path('accounts/', include('allauth.urls')),
+
+    path("logout", users_views.logout_view, name="logout"),
+
+    path("login", users_views.login_view, name="login"),
 ]
 
 
