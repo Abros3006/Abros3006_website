@@ -168,7 +168,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
-LOGIN_REDIRECT_URL = 'login/'
+LOGIN_REDIRECT_URL = '/'
 # Redirect to home URL after logout
-LOGOUT_REDIRECT_URL = 'login/'
+LOGOUT_REDIRECT_URL = '/'
 

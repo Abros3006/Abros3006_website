@@ -56,13 +56,47 @@
     
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}"><i class="bi bi-house navicon"></i>Home</a></li>
-                <li><a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}"><i class="bi bi-file-person navicon"></i>Resume</a></li>
-                <li><a href="{% url 'blog' %}" class="active"><i class="bi bi-file-earmark-text navicon"></i>Blog</a></li>
-                <li><a href="{% url 'snapshots' %}" class="{% if request.path == '/snapshots/' %}active{% endif %}"><i class="bi bi-camera navicon"></i>Snapshots</a></li>
-                <li><a href="{% url 'home' %}#contact"><i class="bi bi-envelope navicon"></i>Contact</a></li>
+              <li>
+                <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">
+                  <i class="bi bi-house navicon"></i>Home
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}">
+                  <i class="bi bi-file-person navicon"></i>Resume
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'blog' %}" class="{% if request.path == '/blog/' %}active{% endif %}">
+                  <i class="bi bi-file-earmark-text navicon"></i>Blog
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'snapshots' %}" class="{% if request.path == '/snapshots/' %}active{% endif %}">
+                  <i class="bi bi-camera navicon"></i>Snapshots
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'home' %}#contact">
+                  <i class="bi bi-envelope navicon"></i>Contact
+                </a>
+              </li>
+          
+              {% if user.is_authenticated %}
+                <li>
+                  <a href="{% url 'logout' %}">
+                    <i class="bi bi-box-arrow-right navicon"></i>Logout
+                  </a>
+                </li>
+              {% else %}
+                <li>
+                  <a href="{% url 'login' %}">
+                    <i class="bi bi-box-arrow-in-right navicon"></i>Login
+                  </a>
+                </li>
+              {% endif %}
             </ul>
-        </nav>
+          </nav>
     </header>
 
     <!-- Main Content -->
