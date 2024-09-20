@@ -2,7 +2,10 @@ from django.shortcuts import render
 from .models import Story
 import os
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def snapshots(request):
     stories = Story.objects.all().order_by('-id')
     images_dir = os.path.join(settings.BASE_DIR, 'static', 'snapshot_images')

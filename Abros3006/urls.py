@@ -17,14 +17,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from django.shortcuts import redirect
+from django.contrib.auth.views import LogoutView
+# from django.contrib.auth.views import Login
 
 # Import views from your apps
 from home import views as home_views
 from snapshots import views as snapshots_views
 from blog import views as blog_views
+from users import views as users_views
 
 from django.conf import settings
 from django.conf.urls.static import static
+
+def redirect_to_oauth_login(request):
+    return redirect('/accounts/login')  # Replace with your OAuth URL
+def redirect_to_oauth_logout(request):
+    return redirect('/')  # Replace with your OAuth URL
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -43,6 +52,13 @@ urlpatterns = [
 
     #Post
     path('blog/<str:post_id>/', blog_views.post, name='post'),
+
+    # User authentication
+    path('accounts/', include('allauth.urls')),
+
+    path('login/', redirect_to_oauth_login, name='login'),
+    
+    path('logout/', users_views.logout_view, name='logout'),
 ]
 
 

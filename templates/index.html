@@ -73,17 +73,32 @@
           </a>
         </li>
         <li>
-            <a href="{% url 'snapshots' %}" class="{% if request.path == '/snapshots/' %}active{% endif %}">
-              <i class="bi bi-camera navicon"></i></i>Snapshots
-            </a>
+          <a href="{% url 'snapshots' %}" class="{% if request.path == '/snapshots/' %}active{% endif %}">
+            <i class="bi bi-camera navicon"></i>Snapshots
+          </a>
         </li>
         <li>
           <a href="{% url 'home' %}#contact">
             <i class="bi bi-envelope navicon"></i>Contact
           </a>
         </li>
+    
+        {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'logout' %}">
+              <i class="bi bi-box-arrow-right navicon"></i>Logout
+            </a>
+          </li>
+        {% else %}
+          <li>
+            <a href="{% url 'login' %}">
+              <i class="bi bi-box-arrow-in-right navicon"></i>Login
+            </a>
+          </li>
+        {% endif %}
       </ul>
     </nav>
+    
     
 
   </header>

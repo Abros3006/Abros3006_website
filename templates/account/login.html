@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Abros3006 - Login</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static '../static/img/Fav/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '../static/img/Fav/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static '../static/img/Fav/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static '../static/img/Fav/site.webmanifest' %}">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  {% load socialaccount %}
+
+  <header id="header" class="header d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="https://via.placeholder.com/150" alt="Profile Image" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Atharva Bangle</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/atharva-bangle/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/Abros3006" class="github"><i class="bi bi-github"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li>
+          <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">
+            <i class="bi bi-house navicon"></i>Home
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}">
+            <i class="bi bi-file-person navicon"></i>Resume
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'blog' %}" class="{% if request.path == '/blog/' %}active{% endif %}">
+            <i class="bi bi-file-earmark-text navicon"></i>Blog
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'snapshots' %}" class="{% if request.path == '/snapshots/' %}active{% endif %}">
+            <i class="bi bi-camera navicon"></i>Snapshots
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'home' %}#contact">
+            <i class="bi bi-envelope navicon"></i>Contact
+          </a>
+        </li>
+    
+        {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'logout' %}" class="active">
+              <i class="bi bi-box-arrow-right navicon"></i>Logout
+            </a>
+          </li>
+        {% else %}
+          <li>
+            <a href="{% url 'login' %}" class="active">
+              <i class="bi bi-box-arrow-in-right navicon"></i>Login
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+    <!-- Login Section -->
+    <section id="login" class="login section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Login</h2>
+        <p>Log in using your Google or GitHub account to stalk my snapshots and recieve my newsletter!!</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="login-form">
+              <div class="d-grid gap-2">
+                <a href="{% provider_login_url 'github' %}?next=/" class="btn btn-black btn-lg">
+                  <i class="bi bi-github me-2"></i> Login with Github
+                </a>
+                  <a href="{% provider_login_url 'google' %}?next=/" class="btn btn-danger btn-lg">
+                    <i class="bi bi-google me-2"></i> Login with Google
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Login Section -->
+
+    <footer id="footer" class="footer position-relative">
+      <div class="container">
+        <div class="copyright text-center">
+          <p>Copyright © Atharva Bangle 2024</p>
+        </div>
+      </div>
+    </footer>
+
+  </main><!-- End #main -->
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
