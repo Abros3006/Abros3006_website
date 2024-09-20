@@ -30,7 +30,7 @@ DEBUG = config('DEBUG', cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 
-SITE_ID = 2
+SITE_ID = 1
 
 # Application definition
 
