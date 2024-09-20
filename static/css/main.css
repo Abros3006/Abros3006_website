@@ -1296,3 +1296,7 @@ section,
 .white{
   color: white;
 }
+
+.rounded-circle{
+  background-color: #d54e18 !important;
+}
