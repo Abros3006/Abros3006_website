@@ -59,6 +59,8 @@ urlpatterns = [
     path('login/', redirect_to_oauth_login, name='login'),
     
     path('logout/', users_views.logout_view, name='logout'),
+
+    path('contact/', home_views.contact, name='contact'),
 ]
 
 

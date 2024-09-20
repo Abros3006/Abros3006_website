@@ -40,7 +40,7 @@
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <div class="profile-img">
-      <img src="https://via.placeholder.com/150" alt="Profile Image" class="img-fluid rounded-circle">
+      <img src="../static/img/profile.jpg" alt="Profile Image" class="img-fluid rounded-circle">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
@@ -398,35 +398,33 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
-            <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
+          <form action="{% url 'contact' %}" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            {% csrf_token %}
+            <div class="row gy-4">
                 <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                    <label for="name-field" class="pb-2">Your Name</label>
+                    <input type="text" name="name" id="name-field" class="form-control" required>
                 </div>
-
+        
                 <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                    <label for="email-field" class="pb-2">Your Email</label>
+                    <input type="email" class="form-control" name="email" id="email-field" required>
                 </div>
-
+        
                 <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Message</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                    <label for="subject-field" class="pb-2">Message</label>
+                    <input type="text" class="form-control" name="subject" id="subject-field" required>
                 </div>
-
-
+        
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+        
+                    <button type="submit">Send Message</button>
                 </div>
-
-              </div>
-            </form>
+            </div>
+        </form>
           </div><!-- End Contact Form -->
 
         </div>
