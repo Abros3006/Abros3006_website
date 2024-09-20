@@ -30,6 +30,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 
 SITE_ID = 2
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.github',
 ]
 
 SOCIALACCOUNT_PROVIDERS = {
@@ -59,8 +61,16 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {
             'access_type': 'online',
         }
+    },
+    'github': {
+        'APP': {
+            'client_id': config('GITHUB_CLIENT_ID'),
+            'secret': config('GITHUB_CLIENT_SECRET'),
+            'key': ''
+        }
     }
 }
+
 
 MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',

@@ -101,7 +101,7 @@
     <section id="login" class="login section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Login</h2>
-        <p>Please log in using your Google or GitHub account.</p>
+        <p>Log in using your Google or GitHub account to stalk my snapshots and recieve my newsletter!!</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -109,9 +109,9 @@
           <div class="col-lg-6">
             <div class="login-form">
               <div class="d-grid gap-2">
-                <button class="btn btn-dark btn-lg" type="button">
+                <a href="{% provider_login_url 'github' %}?next=/" class="btn btn-black btn-lg">
                   <i class="bi bi-github me-2"></i> Login with Github
-                </button>
+                </a>
                   <a href="{% provider_login_url 'google' %}?next=/" class="btn btn-danger btn-lg">
                     <i class="bi bi-google me-2"></i> Login with Google
                   </a>
