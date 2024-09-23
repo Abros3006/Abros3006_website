@@ -17,6 +17,6 @@ def snapshots(request):
         if os.path.exists(full_image_path):
             story.image_url = f'snapshot_images/{image_path}'
         else:
-            story.image_url = None  # Or a default image URL
+            story.image_url = None
 
     return render(request, 'snapshots.html', {'stories': stories})
