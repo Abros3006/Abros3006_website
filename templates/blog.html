@@ -41,7 +41,7 @@
         </button>
     
         <div class="profile-img">
-            <img src="../static/img/profile.jpg" alt="Profile Image" class="img-fluid rounded-circle">
+            <img src="{% static 'img/profile.jpg' %}" alt="Profile Image" class="img-fluid rounded-circle">
         </div>
     
         <a href="{% url 'home' %}" class="logo d-flex align-items-center justify-content-center">
@@ -105,7 +105,7 @@
           <div class="mx-auto">
               <h1 class="text-center mb-2 heading">Welcome to My Blog</h1>
               <p class="text-center text-muted mb-5">Exploring tech, travel, and everything in between</p>
-              <article class="post-preview mb-5">
+              <!-- <article class="post-preview mb-5">
                   <a href="/blog/{{post.id}}">
                       <h2 class="post-title heading">Blogs are Coming Soon</h2>
                       <h4 class="post-subtitle">Stay Tuned for Updates</h4>
@@ -113,19 +113,19 @@
 
               </article>
               
-              <hr>
-              <!-- {% for post in posts reversed %}
+              <hr> -->
+              {% for post in posts reversed %}
               <article class="post-preview mb-5">
                   <a href="/blog/{{post.id}}">
                       <h2 class="post-title heading">{{post.title}}</h2>
                       <h4 class="post-subtitle">{{post.subtitle}}</h4>
                   </a>
-                  <p class="post-meta">Posted by <a class="heading">Atharva Bangle</a> , Published on {{post.Date}}</p>
+                  <p class="post-meta">Posted by <a class="heading">Atharva Bangle</a> , Published on {{post.date}}</p>
                   <a href="/blog/{{post.id}}"><h6 class="post-excerpt">{{post.body|truncatewords:40}}</h6></a>
               </article>
               
               <hr>
-                {% endfor %}             -->
+                {% endfor %}            
               <nav class="blog-pagination" aria-label="Pagination">
                   <a class="btn btn-primary float-end" href="#">Older Posts ⇒</a>
               </nav>
