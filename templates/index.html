@@ -40,7 +40,7 @@
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <div class="profile-img">
-      <img src="../static/img/profile.jpg" alt="Profile Image" class="img-fluid rounded-circle">
+      <img src="{% static 'img/profile.jpg' %}" alt="Profile Image" class="img-fluid rounded-circle">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
@@ -50,7 +50,7 @@
     </a>
 
     <div class="social-links text-center">
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.instagram.com/abros3006?igsh=MWV3dnF6Z2ZwOHY4OA==" class="instagram"><i class="bi bi-instagram"></i></a>
       <a href="https://www.linkedin.com/in/atharva-bangle/" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="https://github.com/Abros3006" class="github"><i class="bi bi-github"></i></a>
     </div>
@@ -129,10 +129,7 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="#" class="img-fluid" alt="">
-          </div>
+        <div class="row gy-4">
           <div class="col-lg-8 content">
             <h2>Full-Stack Developer</h2>
             <p class="fst-italic py-3">
@@ -337,7 +334,7 @@
             <p>
               <a href="{% url 'snapshots' %}">Coming Soon</a>
             </p>
-            <img src="https://via.placeholder.com/150" class="snapshot-img" alt="">
+            <img src="{% static 'img/profile.jpg' %}" class="snapshot-img" alt="">
           </div>
         </div><!-- End snapshot item -->
 

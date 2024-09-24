@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
     return render(request, 'index.html')
 
+@login_required
 def resume(request):
     return render(request, 'resume.html')
 
