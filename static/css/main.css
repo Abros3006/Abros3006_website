@@ -1300,3 +1300,7 @@ section,
 .rounded-circle{
   background-color: #d54e18 !important;
 }
+
+.post-excerpt{
+  color: #d54e18;
+}

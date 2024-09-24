@@ -103,21 +103,7 @@
     <div class="row">
       <h1 class="text-center mb-2 heading">Welcome to Snapshots</h1>
       <p class="text-center text-muted mb-5">A little glimpse into my life</p>
-      <div class="col-12 col-md-6 mb-4">
-        <div class="card">
-          <!-- <img src="{% static story.image_url %}" alt="" class="card-img-top"> -->
-          <div class="card-body">
-            <h5 class="card-title">
-              <h5 class="text-decoration-none heading">Snapshots</a>
-            </h5>
-            <p class="card-text text-muted">Coming Soon</p>
-            <h6 href="#" class="text-muted">
-              <span class="me-2 border-start border-danger"></span>Stay Tuned
-            </h6>
-          </div>
-        </div>
-      </div>
-      <!-- {% for story in stories %}
+      {% for story in stories %}
         {% if story.image_url %}
           <div class="col-12 col-md-6 mb-4">
             <div class="card">
@@ -134,7 +120,7 @@
             </div>
           </div>
         {% endif %}
-      {% endfor %} -->
+      {% endfor %}
       <nav class="blog-pagination" aria-label="Pagination">
         <a class="btn" href="#">Older Posts ⇒</a>
     </nav>
