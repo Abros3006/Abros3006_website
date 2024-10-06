@@ -3,7 +3,6 @@ from .settings import *
 from .settings import BASE_DIR
 from decouple import config
 
-SECRET_KEY = [config('SECRET_KEY')]
 ALLOWED_HOSTS = [config('ALLOWED_HOSTS')]
 
 CSRF_TRUSTED_ORIGINS = ['https://'+config('ALLOWED_HOSTS')]
