@@ -7,7 +7,7 @@ SECRET_KEY = [config('SECRET_KEY')]
 ALLOWED_HOSTS = [config('ALLOWED_HOSTS')]
 
 CSRF_TRUSTED_ORIGINS = ['https://'+config('ALLOWED_HOSTS')]
-DEBUG = False
+DEBUG = config('DEBUG', cast=bool)
 
 MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
