@@ -4,10 +4,10 @@ from .settings import BASE_DIR
 from decouple import config
 
 SECRET_KEY = [config('SECRET_KEY')]
-ALLOWED_HOSTS = [config('ALLOWED_HOSTS')]
+ALLOWED_HOSTS = [os.environ('WEBSITE_HOSTNAME')]
 
-CSRF_TRUSTED_ORIGINS = ['https://'+config('ALLOWED_HOSTS')]
-DEBUG = config('DEBUG', cast=bool)
+CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ('WEBSITE_HOSTNAME')]
+DEBUG = False
 
 MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
@@ -26,7 +26,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Database
 
-connection_string = config('AZURE_DATABASE_URL')
+connection_string = os.environ('AZURE_DATABASE_URL')
 parameters = {pair.split('='): pair.split('=')[1] for pair in connection_string.split(' ')}
 
 DATABASES = {
