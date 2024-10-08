@@ -27,7 +27,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Database
 
 connection_string = os.environ.get('AZURE_DATABASE_URL')
-parameters = {pair.split('='): pair.split('=')[1] for pair in connection_string.split(' ')}
+parameters = {}
+if connection_string:
+    for pair in connection_string.split(' '):
+        if '=' in pair:
+            key, value = pair.split('=', 1)  # Use maxsplit=1 to handle '=' in values
+            parameters[key] = value
+        else:
+            print(f"Warning: '{pair}' is not a valid key=value pair.")
 
 DATABASES = {
     'default': {
