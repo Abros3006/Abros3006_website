@@ -26,7 +26,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Database
 
-connection_string = os.environ('AZURE_DATABASE_URL')
+connection_string = os.environ.get('AZURE_DATABASE_URL')
 parameters = {pair.split('='): pair.split('=')[1] for pair in connection_string.split(' ')}
 
 DATABASES = {
