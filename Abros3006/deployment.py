@@ -26,7 +26,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Database
 
-connection_string = os.environ.get('AZURE_POSTGRESQL_CONNECTION_STRING')
+connection_string = os.environ.get('AAZURE_POSTGRESQL_CONNECTIONSTRING')
+print("Connection String:", connection_string)
 parameters = {}
 
 if connection_string:
