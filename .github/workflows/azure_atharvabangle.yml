@@ -27,19 +27,19 @@ jobs:
           python -m venv venv
           source venv/bin/activate
 
-      - name: Install dependencies
+      - name: Add .env file
         run: |
-          pip install -r requirements.txt
+          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" > .env
+          echo "DEBUG=${{ secrets.DEBUG }}" >> .env
+          echo "ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}" >> .env
+          echo "GIT_CLIENT_ID=${{ secrets.GIT_CLIENT_ID }}" >> .env
+          echo "GIT_CLIENT_SECRET=${{ secrets.GIT_CLIENT_SECRET }}" >> .env
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
       - name: Run collectstatic
-        env:
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        DEBUG: ${{ secrets.DEBUG }}
-        ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
-        GITHUB_CLIENT_ID: ${{ secrets.GITHUB_CLIENT_ID }}
-        GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_CLIENT_SECRET }}
-        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-        run: python manage.py collectstatic --noinput
+        run: python manage.py collectstatic 
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
