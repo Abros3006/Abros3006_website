@@ -7,7 +7,7 @@ SECRET_KEY = config('SECRET_KEY')  # Changed to remove the list
 ALLOWED_HOSTS = [os.environ.get('WEBSITE_HOSTNAME', '')]
 
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ.get('WEBSITE_HOSTNAME', '')]
-DEBUG = False
+DEBUG = True
 
 MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
@@ -21,7 +21,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-STATIC_FILE_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Database
@@ -61,3 +61,24 @@ DATABASES = {
         },
     }
 }
+
+LOGGING = {
+       'version': 1,
+       'disable_existing_loggers': False,
+       'handlers': {
+           'console': {
+               'class': 'logging.StreamHandler',
+           },
+       },
+       'root': {
+           'handlers': ['console'],
+           'level': 'WARNING',
+       },
+       'loggers': {
+           'django': {
+               'handlers': ['console'],
+               'level': 'WARNING',
+               'propagate': False,
+           },
+       },
+   }
