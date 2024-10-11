@@ -33,33 +33,6 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 SITE_ID = 3
 
-connection_string = os.environ.get('AZURE_POSTGRESQL_CONNECTIONSTRING')
-print("Connection String:", connection_string)
-parameters = {}
-
-if connection_string:
-    pairs = connection_string.split(' ')
-    for pair in pairs:
-        if '=' in pair:
-            key, value = pair.split('=', 1)  # Use maxsplit=1 to handle '=' in values
-            parameters[key.strip()] = value.strip()  # Stripping whitespace
-        else:
-            print(f"Warning: '{pair}' is not a valid key=value pair.")
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': parameters['dbname'],
-        'HOST': parameters['host'],
-        'PORT': parameters.get('port', '5432'),
-        'USER': parameters['user'],
-        'PASSWORD': parameters['password'],
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
-    }
-}
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -138,12 +111,12 @@ WSGI_APPLICATION = 'Abros3006.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
