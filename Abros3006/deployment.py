@@ -4,10 +4,10 @@ from .settings import BASE_DIR
 from decouple import config
 
 SECRET_KEY = config('SECRET_KEY')  # Changed to remove the list
-ALLOWED_HOSTS = [os.environ.get('WEBSITE_HOSTNAME', '')]
+ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
 
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ.get('WEBSITE_HOSTNAME', '')]
-DEBUG = True
+DEBUG = [os.environ.get('DEBUG')]
 
 MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
