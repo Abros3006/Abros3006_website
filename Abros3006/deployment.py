@@ -6,6 +6,8 @@ from decouple import config
 SECRET_KEY = config('SECRET_KEY')  # Changed to remove the list
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
 
+SITE_ID = 3
+
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ.get('WEBSITE_HOSTNAME', '')]
 DEBUG = [os.environ.get('DEBUG')]
 
@@ -136,3 +138,8 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://atharva-bangle.tech',  # Your custom domain
+    'https://www.atharva-bangle.tech'  # Add both with and without www if needed
+]
