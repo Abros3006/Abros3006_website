@@ -142,4 +142,9 @@ SOCIALACCOUNT_PROVIDERS = {
 CSRF_TRUSTED_ORIGINS = [
     'https://atharva-bangle.tech',  # Your custom domain
     'https://www.atharva-bangle.tech'  # Add both with and without www if needed
+    'https://' + os.environ.get('WEBSITE_HOSTNAME', '')
 ]
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'https://atharva-bangle.tech/accounts/google/login/callback/'
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
